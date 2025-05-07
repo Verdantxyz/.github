@@ -46,9 +46,7 @@ Each creator token:
 
 The token price follows a **sigmoid bonding curve**:
 
-\[
-P(s) = a \cdot \frac{1}{1 + e^{-b(s - c)}}
-\]
+$$ P(s) = \frac{a}{1 + e^{-b(s - c)}} $$
 
 Where:
 - \(P(s)\): price at supply \(s\)
