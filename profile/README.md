@@ -48,7 +48,9 @@ Verdant uses a **sigmoid bonding curve** to determine the token price as a funct
 
 **Formula:**
 
-![Sigmoid Bonding Curve Formula](A_digital_image_displays_the_sigmoid_curve_formula.png)
+$$
+P(s) = a / (1 + e^{-b(s - c)})
+\$$
 
 Where:
 
