@@ -1,159 +1,127 @@
-# Verdant Lens Whitepaper
+# Verdant: A Reputation-Gated Social Token Launchpad on Lens
 
 ## Abstract
 
-**Verdant Lens** is a decentralized platform enabling creators on the Lens ecosystem to launch their own personalized tokens through a reputation-gated system. By leveraging bonding curve mechanisms and progressive liquidity migration to Uniswap V2, creators and their communities can participate in economic, reputational, and social growth in a sustainable and gamified way.
+Verdant is a decentralized launchpad that empowers reputable creators within the Lens ecosystem to issue their own community tokens, backed by a sigmoid bonding curve and a transparent path to liquidity. By leveraging social reputation as a gating mechanism, Verdant fosters sustainable, trust-based token economies where ownership unlocks access, participation, and shared upside. Minting is powered by GHO, Lens Chain’s native stablecoin, and every interaction contributes to a gamified XP system that incentivizes community growth.
 
 ---
 
 ## 1. Introduction
 
-In the Lens ecosystem, reputation and influence are key drivers of value. **Verdant Lens** empowers top creators to tokenize their presence, letting their supporters back them financially while gaining exclusive access to their communities and rewards.
+The creator economy in Web3 lacks tools for credible creators to launch tokens without speculative dynamics or predatory structures. Verdant addresses this gap by combining on-chain reputation, bonding curve mechanics, and community incentives to offer a launchpad tailored for Lens-native creators.
 
-Verdant Lens introduces:
+Unlike typical permissionless launchpads, Verdant **requires a Lens Score ≥700** to be eligible to launch a token, ensuring each creator has proven credibility and sustained contribution to the ecosystem.
 
-- A **reputation-gated token launcher**: only users with a Lens Reputation Score > 700 can create tokens.
-- A **bonding curve mechanism** to bootstrap liquidity.
-- An automatic **migration to Uniswap V2** once liquidity thresholds are met.
-- An integrated **XP system** rewarding participants for supporting creators.
+Verdant differentiates itself by aligning social reputation, progressive liquidity, and community utility, positioning tokens not just as tradable assets, but as **keys to social and participatory privileges**.
 
 ---
 
-## 2. Use Cases
+## 2. Why Verdant
 
-Why would someone buy a creator’s token?
+Verdant stands apart from other launchpads through several key differentiators:
 
-- **Support**: Backing a creator you believe in.
-- **Exclusive access**: Token holders can join private groups or channels managed by the creator.
-- **Potential appreciation**: Early buyers benefit as token demand grows.
-- **Fee-sharing in Uniswap V2**: Once migrated, token holders can provide liquidity in Uniswap V2 and earn trading fees.
-  
+- **Reputation-Gated Access**: Launches are exclusive to creators with a Lens Score ≥700, ensuring trusted, active participants.
+- **Sigmoid Bonding Curve Pricing**: Tokens are minted along a sigmoid curve, providing fair early pricing and progressive increase based on demand.
+- **Social Utility First**: Tokens grant access to exclusive communities, content, or governance, with liquidity as an optional next step.
+- **Progressive Liquidity Path**: Once token liquidity reaches a predefined threshold, the token can migrate to Uniswap V2 pools for broader trading and fee earning.
+- **GHO-Powered Minting**: Minting requires GHO, ensuring stable inflows and reinforcing Lens Chain’s economy.
+- **Gamified Incentives**: Users earn XP for minting, swapping, or providing liquidity, fostering continuous engagement.
+
+Verdant redefines token launches as **socially-aligned, reputation-backed, and utility-driven**, rather than purely speculative.
+
 ---
 
-## 3. Token Creation
+## 3. Tokenomics
 
-### 3.1 Eligibility
+Each creator token follows these principles:
 
-Only Lens users with a **Reputation Score ≥ 700** can launch their own token.
+- **Total Supply**: Defined dynamically by the bonding curve’s capacity.
+- **Initial Supply Allocation**: A portion of the token supply is allocated directly to the creator, enabling them to hold, distribute, or provide liquidity post-migration.
+- **Minting Currency**: Users mint tokens by paying with GHO.
+- **No Initial Liquidity Required**: Liquidity is progressively built through user minting; migration to Uniswap V2 occurs once a liquidity threshold is achieved.
 
-Each creator token:
+---
 
-- Is minted through a **sigmoidal bonding curve**.
-- Uses **GHO (native stablecoin of Lens Chain)** as the base currency.
-- Has a supply dynamically minted by buyers along the bonding curve.
+## 4. Pricing Model
 
-### 3.2 Price Mechanism
+Verdant uses a **sigmoid bonding curve** to determine the token price as a function of circulating supply:
 
-The token price follows a **sigmoid bonding curve**:
+**Formula:**
 
-$$ P(s) = \frac{a}{1 + e^{-b(s - c)}} $$
+![Sigmoid Bonding Curve Formula](A_digital_image_displays_the_sigmoid_curve_formula.png)
 
 Where:
-- \(P(s)\): price at supply \(s\)
-- \(a\): price scaling factor
-- \(b\): steepness
-- \(c\): midpoint
 
-Early tokens are cheaper; price accelerates with supply.
+- `P(x)`: Price at supply `x`
+- `L`: Maximum price limit
+- `k`: Curve steepness
+- `x₀`: Inflection point (mid-supply)
 
-**All purchases are made in GHO.** Collected GHO is locked in the bonding curve contract to back liquidity.
+Example values for a balanced system:
 
----
+| Variable | Value  |
+|----------|--------|
+| L        | 10 GHO |
+| k        | 0.1    |
+| x₀       | 500    |
 
-## 4. Migration to Uniswap V2
-
-Once a creator's token reaches a preset liquidity threshold (e.g., **5,000 GHO locked**), it is:
-
-1. Migrated automatically to a **Uniswap V2 pool (TOKEN/GHO)**.
-2. Uses locked GHO and corresponding token supply as initial liquidity.
-3. Allows public trading and liquidity provision by users.
-
-### 💡 Key difference:
-
-During the bonding curve phase:
-- Buy/sell interacts directly with the curve contract.
-
-After migration:
-- Buy/sell happens via **Uniswap V2 AMM**, enabling fee-sharing for LPs.
+This curve ensures fair early pricing, gradual increase, and price stabilization as supply grows.
 
 ---
 
-## 5. Incentives & Rewards
+## 5. User Incentives
 
-### 5.1 Why buy a token?
+### 5.1 Creator Incentives
+- Direct allocation of an initial token supply for optional liquidity or treasury purposes.
+- No upfront capital requirement to provide liquidity.
+- Potential fee-sharing once liquidity is migrated to Uniswap V2.
 
-✅ Support a creator  
-✅ Gain **access to exclusive groups/channels**  
-✅ Benefit from early price appreciation  
-✅ Become eligible to provide liquidity and earn **Uniswap fees**
-
----
-
-### 5.2 Rewards for creators
-
-- **No commission on bonding curve purchases** → 100% of GHO stays in liquidity → preserves price integrity.
-- Creator receives an **initial allocation of tokens** (e.g., 10-20% reserved at genesis) for:
-  - Adding liquidity to Uniswap
-  - Selling gradually
-  - Incentivizing community (airdrops, giveaways)
+### 5.2 Holder Incentives
+- XP earned per token minted, swap performed, or liquidity provided.
+- Access to creator’s gated communities (e.g., Discord roles, Telegram channels).
+- Once migrated to Uniswap V2, holders may participate in liquidity pools and earn trading fees.
 
 ---
 
-### 5.3 Rewards for holders
+## 6. Use Cases
 
-- Earn **XP** for holding creator tokens.
-- Access to **creator’s private groups**.
-- Optionally participate in **future governance** if enabled.
-- **Eligible to provide liquidity** on Uniswap after migration → earn trading fees.
-
-| Action                   | XP Earned                |
-|-------------------------|-------------------------|
-| Buy tokens               | +2 XP per 100 GHO       |
-| Swap (buy/sell)          | +1 XP per swap          |
-| Provide Liquidity        | +5 XP per 100 GHO added |
-| Hold tokens              | +1 XP per day per 100 tokens |
+- Fans mint tokens to support their favorite creator while gaining access to private communities or exclusive perks.
+- Creators leverage token ownership for content gating, voting mechanisms, or contributor roles.
+- Holders can swap, provide liquidity, and earn XP across multiple creator tokens, building platform-wide reputation.
 
 ---
 
-## 6. Tokenomics
+## 7. Migration to Uniswap V2
 
-| Parameter                    | Value (example)        |
-|-----------------------------|-----------------------|
-| Base currency                | GHO                   |
-| Bonding curve formula        | Sigmoid               |
-| Creator initial allocation    | 10-20% of total       |
-| Liquidity migration threshold | 5,000 GHO locked     |
-| Post-migration AMM           | Uniswap V2 (TOKEN/GHO)|
+Tokens can migrate to a Uniswap V2 pool once an established liquidity threshold (defined per token) is reached. This enables broader trading, liquidity provision, and external market discovery.
 
-✅ No direct fee on bonding curve purchases (all funds locked as liquidity).  
-✅ Sustainable liquidity bootstrap → smooth transition to public market.
+During migration:
+- The creator may contribute their allocated supply into the pool.
+- Holders may provide liquidity and earn fees.
+- The bonding curve mechanism halts further minting; pricing transitions to the open AMM.
 
 ---
 
-## 7. Risks & Mitigations
+## 8. Risks and Mitigations
 
-| Risk                                 | Mitigation                              |
-|-------------------------------------|----------------------------------------|
-| Low token demand                     | Launch gated by reputation threshold    |
-| Creator sells all tokens post-launch | Vesting/vesting recommendations        |
-| Lack of utility                      | Incentivized exclusive access + XP      |
-| Rugpull fear                         | GHO locked in bonding curve → verifiable |
-
----
-
-## 8. Conclusion
-
-**Verdant Lens** empowers reputable creators to tokenize their influence in a transparent, community-aligned, and gamified system. Supporters gain social, economic, and access-based benefits, while creators build sustainable token economies tied to their reputation.
+| Risk                   | Mitigation                                     |
+|-----------------------|------------------------------------------------|
+| Low liquidity          | Gated migration until liquidity threshold met   |
+| Low demand             | Reputation gating ensures initial interest base |
+| Price volatility post-migration | Creator LP incentives, optional liquidity mining |
 
 ---
 
-## 9. Future Directions
+## 9. Conclusion
 
-- DAO governance for creator communities
-- Cross-token collaboration between creators
-- NFT perks linked to holding tokens
-- Integration with Lens-based dApps
+Verdant offers a **unique launchpad tailored to the Lens ecosystem**, prioritizing reputation, community alignment, and sustainable token economies. By gating access to credible creators, leveraging a sigmoid bonding curve, and rewarding participants through XP, Verdant builds an ecosystem of **social tokens with intrinsic community value**.
+
+Verdant empowers creators not just to launch a token, but to **grow an interconnected, incentivized, and reputation-backed micro-economy** within the Lens network.
 
 ---
 
-Verdant Lens: growing value, one connection at a time 🌱
+## 10. References
+
+- Lens Protocol: https://lens.xyz
+- Uniswap Docs: https://docs.uniswap.org
+- GHO: https://aave.com/gho
