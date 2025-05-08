@@ -2,32 +2,33 @@
 
 ## Abstract
 
-**Verdant Lens** is a decentralized platform enabling creators on the Lens ecosystem to launch their own personalized tokens through a reputation-gated system. By leveraging bonding curve mechanisms and progressive liquidity migration to Uniswap V2, creators and their communities can participate in economic, reputational, and social growth in a sustainable and gamified way.
+Verdant is a decentralized launchpad that empowers reputable creators within the Lens ecosystem to issue their own community tokens, backed by a sigmoid bonding curve and a transparent path to liquidity. By leveraging social reputation as a gating mechanism, Verdant fosters sustainable, trust-based token economies where ownership unlocks access, participation, and shared upside. Minting is powered by GHO, Lens Chain’s native stablecoin, and every interaction contributes to a gamified XP system that incentivizes community growth.
 
 ---
 
 ## 1. Introduction
 
-In the Lens ecosystem, reputation and influence are key drivers of value. **Verdant Lens** empowers top creators to tokenize their presence, letting their supporters back them financially while gaining exclusive access to their communities and rewards.
+The creator economy in Web3 lacks tools for credible creators to launch tokens without speculative dynamics or predatory structures. Verdant addresses this gap by combining on-chain reputation, bonding curve mechanics, and community incentives to offer a launchpad tailored for Lens-native creators.
 
-Verdant Lens introduces:
+Unlike typical permissionless launchpads, Verdant **requires a Lens Score ≥700** to be eligible to launch a token, ensuring each creator has proven credibility and sustained contribution to the ecosystem.
 
-- A **reputation-gated token launcher**: only users with a Lens Reputation Score > 700 can create tokens.
-- A **bonding curve mechanism** to bootstrap liquidity.
-- An automatic **migration to Uniswap V2** once liquidity thresholds are met.
-- An integrated **XP system** rewarding participants for supporting creators.
+Verdant differentiates itself by aligning social reputation, progressive liquidity, and community utility, positioning tokens not just as tradable assets, but as **keys to social and participatory privileges**.
 
 ---
 
-## 2. Use Cases
+## 2. Why Verdant
 
-Why would someone buy a creator’s token?
+Verdant stands apart from other launchpads through several key differentiators:
 
-- **Support**: Backing a creator you believe in.
-- **Exclusive access**: Token holders can join private groups or channels managed by the creator.
-- **Potential appreciation**: Early buyers benefit as token demand grows.
-- **Fee-sharing in Uniswap V2**: Once migrated, token holders can provide liquidity in Uniswap V2 and earn trading fees.
-  
+- **Reputation-Gated Access**: Launches are exclusive to creators with a Lens Score ≥700, ensuring trusted, active participants.
+- **Sigmoid Bonding Curve Pricing**: Tokens are minted along a sigmoid curve, providing fair early pricing and progressive increase based on demand.
+- **Social Utility First**: Tokens grant access to exclusive communities, content, or governance, with liquidity as an optional next step.
+- **Progressive Liquidity Path**: Once token liquidity reaches a predefined threshold, the token can migrate to Uniswap V2 pools for broader trading and fee earning.
+- **GHO-Powered Minting**: Minting requires GHO, ensuring stable inflows and reinforcing Lens Chain’s economy.
+- **Gamified Incentives**: Users earn XP for minting, swapping, or providing liquidity, fostering continuous engagement.
+
+Verdant redefines token launches as **socially-aligned, reputation-backed, and utility-driven**, rather than purely speculative.
+
 ---
 
 ## 3. Token Creation
