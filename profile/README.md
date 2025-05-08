@@ -10,7 +10,7 @@ Verdant is a decentralized launchpad that empowers reputable creators within the
 
 The creator economy in Web3 lacks tools for credible creators to launch tokens without speculative dynamics or predatory structures. Verdant addresses this gap by combining on-chain reputation, bonding curve mechanics, and community incentives to offer a launchpad tailored for Lens-native creators.
 
-Unlike typical permissionless launchpads, Verdant **requires a Lens Score ≥700** to be eligible to launch a token, ensuring each creator has proven credibility and sustained contribution to the ecosystem.
+Unlike typical permissionless launchpads, Verdant **requires a Lens Score ≥650** to be eligible to launch a token, ensuring each creator has proven credibility and sustained contribution to the ecosystem.
 
 Verdant differentiates itself by aligning social reputation, progressive liquidity, and community utility, positioning tokens not just as tradable assets, but as **keys to social and participatory privileges**.
 
